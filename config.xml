@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- copied from https://github.com/phonegap/phonegap-template-hello-world/blob/master/www/config.xml -->
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.helloworld"
+        version   = "1.0.0">
+
+    <name>Ionic SideMenu</name>
+
+    <description>
+        Ionic SideMenu with Hello World sample config.
+    </description>
+
+    <author href="http://phonegap.com" email="support@phonegap.com">
+        PhoneGap Team
+    </author>
+
+    <!-- Define the main entry-point to the application -->
+    <content src="index.html" />
+
+    <!-- Customize your app and platform with the preference element. -->
+    <preference name="DisallowOverscroll"         value="true" />
+    <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion"      value="14" />
+
+    <!-- Define a specific version of PhoneGap to build into your app. -->
+    <!-- <preference name="phonegap-version"       value="cli-6.0.0" /> -->
+
+    <!-- Plugins -->
+    <!-- Core plugins -->
+    <plugin name="cordova-plugin-battery-status"      source="npm"  />
+    <plugin name="cordova-plugin-camera"              source="npm"  />
+    <plugin name="cordova-plugin-media-capture"       source="npm"  />
+    <plugin name="cordova-plugin-console"             source="npm"  />
+    <plugin name="cordova-plugin-contacts"            source="npm"  />
+    <plugin name="cordova-plugin-device"              source="npm"  />
+    <plugin name="cordova-plugin-device-motion"       source="npm"  />
+    <plugin name="cordova-plugin-device-orientation"  source="npm"  />
+    <plugin name="cordova-plugin-dialogs"             source="npm"  />
+    <plugin name="cordova-plugin-file"                source="npm"  />
+    <plugin name="cordova-plugin-file-transfer"       source="npm"  />
+    <plugin name="cordova-plugin-geolocation"         source="npm"  />
+    <plugin name="cordova-plugin-globalization"       source="npm"  />
+    <plugin name="cordova-plugin-inappbrowser"        source="npm"  />
+    <plugin name="cordova-plugin-media"               source="npm"  />
+    <plugin name="cordova-plugin-network-information" source="npm"  />
+    <plugin name="cordova-plugin-splashscreen"        source="npm"  />
+    <plugin name="cordova-plugin-statusbar"           source="npm"  />
+    <plugin name="cordova-plugin-vibration"           source="npm"  />
+    <plugin name="cordova-plugin-whitelist"           source="npm"  />
+
+    <!--
+        Define access to external domains.
+        <access />            - a blank access tag denies access to all external resources.
+        <access origin="*" /> - a wildcard access tag allows access to all external resource.
+        Otherwise, you can specify specific domains:
+    -->
+    <access origin="*" />
+    <!--
+       <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
+       <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
+       <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
+    -->
+
+    <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
+    <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+</widget>
