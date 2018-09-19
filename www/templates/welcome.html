@@ -1,0 +1,30 @@
+<ion-view title="Welcome" id="page1">
+  <ion-content padding="true" class="has-header">
+    <center>
+      <div style="height:75px;"></div>
+      <div class="jumpingLogo">
+        <img ng-src="{{app.defaults.images.imgLogo}}" style="display: block; width: 25%; height: 25%; margin-left: auto; margin-right: auto;margin-top:0px">
+      </div>
+    </center>
+    <div>
+      <div ng-show="app.status.isSignedOut" class="button-bar">
+        <button class="button button-balanced button-clear button-icon"></button>
+        <button ng-click="userAction('auth','signIn')" class="button button-balanced button-clear button-icon icon ion-log-in"></button>
+        <button ng-click="userAction('auth','signUp')" class="button button-calm button-clear button-icon icon ion-person-add"></button>
+        <button class="button button-calm button-clear button-icon"></button>
+      </div>
+      <div ng-show="app.status.isSignedIn" class="button-bar">
+        <button class="button button-energized button-block button-icon"></button>
+        <button ng-click="userAction('profile','viewProfile')" class="button button-energized button-clear button-icon icon ion-gear-a"></button>
+        <button ng-click="userAction('auth','signOut')" style="border-radius:5px 5px 5px 5px;" class="button button-assertive button-clear button-icon icon ion-log-out assertive"></button>
+        <button style="border-radius:5px 5px 5px 5px;" class="button button-assertive button-block button-icon assertive"></button>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <h5>Easy Site Inventory</h5>
+      <small>
+        <i>An all-in-one app for data collection at project sites. Download plans, capture images and videos, detect GPS locations, sketch and store all of these in the Cloud.</i>
+      </small>
+    </div>
+  </ion-content>
+</ion-view>

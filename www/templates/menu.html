@@ -1,0 +1,48 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-header-bar class="bar-stable">
+      <div class="title">Menu</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header ">
+      <div>
+        <!-- SECTION-LOG BEGIN -->
+        <center>
+          <p class="dark">
+            {{app.user.email}}
+          </p>
+        </center>
+        <div class="button-bar">
+          <a class="button button-balanced icon ion-log-in" ng-click="userAction('auth','signIn')" ng-show="app.status.isSignedOut"></a>
+          <a class="button button-calm icon ion-person-add" ng-click="userAction('auth','signUp')" ng-show="app.status.isSignedOut"></a>
+          <a class="button button-energized icon ion-gear-a" ng-click="userAction('profile','viewProfile')" ng-show="app.status.isSignedIn"></a>
+          <a class="button button-assertive icon ion-log-out" ng-click="userAction('auth','signOut')" ng-show="app.status.isSignedIn" menu-close=""></a>
+        </div>
+        <!-- SECTION-LOG END -->
+      </div>
+      <ion-list id="menu-list1">
+        <ion-item id="menu-list-item1" ui-sref="menu.home()" menu-close="">Home</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item5" ui-sref="menu.note({})" menu-close="">
+          <i class="icon ion-compose"></i>Note</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item6" ui-sref="menu.location({})" menu-close="">
+          <i class="icon ion-map"></i>Location</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item8" ui-sref="menu.dimension({})" menu-close="">
+          <i class="icon ion-code-working"></i>Dimension</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item9" ui-sref="menu.sketch({})" menu-close="">
+          <i class="icon ion-paintbrush"></i>Sketch</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item2" ui-sref="menu.cart()" menu-close="">
+          <i class="icon ion-android-list"></i>Assignments</ion-item>
+        <ion-item class="item-icon-left" id="menu-list-item3" ui-sref="menu.cloud()" menu-close="">
+          <i class="icon ion-briefcase"></i>Admin</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

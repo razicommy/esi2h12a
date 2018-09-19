@@ -1,0 +1,49 @@
+<ion-view title="Home" hide-back-button="true" cache-view="false">
+  <ion-content padding="true" scroll="false" class="has-header">
+    <div class="mainlayer">
+      <ion-scroll scroll-glue="true" class="list-container">
+        <ion-list>
+          <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="item in resources" on-hold="prepDeleteItem(item)" style="text-align: left;">
+            <img src="{{getImage(item.thumb)}}">
+            <h2>{{item.title}}</h2>
+            <p>
+              {{item.desc}}
+              <br> {{item.ref}}
+              <br> {{item.latlon1}}
+              <br> {{item.latlon2}}
+              <br> {{item.distance}}
+              <br> {{item.height}}
+              <br> {{item.type}}
+            </p>
+            <i class="icon ion-ios-arrow-right" ng-click="selectResourceItem(item)"></i>
+            <ion-option-button class="button-assertive" ng-click="prepRemoveItem(item)">Remove</ion-option-button>
+          </ion-item>
+        </ion-list>
+      </ion-scroll>
+    </div>
+  </ion-content>
+
+  <div class="bar bar-footer">
+    <div class="tabs tabs-icon-only">
+      <a class="tab-item">
+        <i class="icon ion-compose" ng-click="prepNewItem('n')"></i>
+      </a>
+      <a class="tab-item">
+        <i class="icon ion-map" ng-click="prepNewItem('l')"></i>
+      </a>
+      <a class="tab-item">
+        <i class="icon ion-camera" ng-click="prepNewItem('m')"></i>
+      </a>
+      <a class="tab-item">
+        <i class="icon ion-code-working" ng-click="prepNewItem('d')"></i>
+      </a>
+      <a class="tab-item">
+        <i class="icon ion-paintbrush" ng-click="prepNewItem('s')"></i>
+      </a>
+      <a class="tab-item">
+        <i class="icon assertive ion-log-out" ng-click="prepSignOut()"></i>
+      </a>
+    </div>
+  </div>
+
+</ion-view>
